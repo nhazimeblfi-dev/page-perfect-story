@@ -28,3 +28,7 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Application architecture
+- Keep the sales experience on the existing `/` route and store fixed offer facts in `src/lib/sales-page-content.ts`; this preserves the public URL and gives business-critical values one tested source.
+- Serve the supplied product artwork through Lovable CDN asset pointers and never run scripts from the uploaded HTML; this reuses the original images without trusting downloaded page code.
