@@ -260,10 +260,11 @@ function SalesPage() {
 
   return (
     <main className="sales-page">
-      <div className="promo-ribbon">
-        <span aria-hidden="true">✦</span>
-        <p>Condição especial de fim de ano — válida até {salesPageFacts.campaignDeadline}</p>
-        <span aria-hidden="true">✦</span>
+      <div className="promo-ribbon" role="region" aria-label="Condição especial de fim de ano">
+        <div className="promo-ribbon-track">
+          <p><span aria-hidden="true">✦</span> Condição especial de fim de ano — válida até {salesPageFacts.campaignDeadline} <span aria-hidden="true">✦</span></p>
+          <p aria-hidden="true"><span>✦</span> Condição especial de fim de ano — válida até {salesPageFacts.campaignDeadline} <span>✦</span></p>
+        </div>
       </div>
 
       <section className="hero-section">
