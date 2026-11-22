@@ -672,10 +672,10 @@ function SalesPage() {
 
       <section className="section-band section-band--plain">
         <div className="content-wrap guarantee-layout">
-          <div className="guarantee-seal"><ShieldCheck aria-hidden="true" size={36} /><span>7<br />DIAS</span></div>
+          <div className="guarantee-seal"><ShieldCheck aria-hidden="true" size={36} /><span>30<br />DIAS</span></div>
           <div>
             <SectionHeading
-              title="Você tem 7 dias para conhecer o material"
+              title="Você tem 30 dias para conhecer o material"
               align="left"
             />
             <p>
