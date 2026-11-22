@@ -1,6 +1,6 @@
 export const salesPageFacts = {
-  completePrice: "€ 5,60",
-  referencePrice: "R$ 96,00",
+  completePrice: "€ 5,00",
+  referencePrice: "€ 59,00",
   campaignDeadline: "30/11",
   guaranteeDays: 7,
   completeCheckoutUrl: "https://app.mivvo.com.br/checkout/01a1eec9-3889-7619-b7f1-e11fd69c89d9",
