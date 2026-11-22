@@ -1862,3 +1862,135 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+
+/* Motion polish: lightweight reveal, tactile controls and a stronger first screen. */
+.sales-page {
+  overflow: clip;
+  scroll-behavior: smooth;
+}
+
+.hero-section {
+  position: relative;
+  isolation: isolate;
+  background-image:
+    radial-gradient(ellipse at 8% 12%, color-mix(in oklab, var(--sun) 24%, transparent), transparent 34%),
+    radial-gradient(ellipse at 92% 28%, color-mix(in oklab, var(--sky) 16%, transparent), transparent 36%);
+}
+
+.hero-content > * {
+  animation: hero-enter 650ms cubic-bezier(.2,.75,.25,1) both;
+}
+.hero-content > :nth-child(2) { animation-delay: 70ms; }
+.hero-content > :nth-child(3) { animation-delay: 130ms; }
+.hero-content > :nth-child(4) { animation-delay: 190ms; }
+.hero-content > :nth-child(5) { animation-delay: 250ms; }
+.hero-content > :nth-child(6) { animation-delay: 310ms; }
+.hero-content > :nth-child(7) { animation-delay: 360ms; }
+
+@keyframes hero-enter {
+  from { opacity: 0; transform: translate3d(0, 18px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+.hero-product img {
+  filter: drop-shadow(0 18px 28px color-mix(in oklab, var(--ink) 15%, transparent));
+  animation: hero-product-float 6s ease-in-out 700ms infinite;
+}
+
+@keyframes hero-product-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
+.reveal-item {
+  opacity: 0;
+  transform: translate3d(0, 22px, 0);
+  transition: opacity 560ms ease, transform 560ms cubic-bezier(.2,.7,.25,1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+.reveal-item.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  will-change: auto;
+}
+
+.purchase-button,
+.text-action,
+.activity-sample,
+.learning-item,
+.bonus-card,
+.comparison-panel,
+.testimonial-image,
+.feature-image img {
+  transition: transform 220ms ease, box-shadow 220ms ease, filter 220ms ease, background-color 220ms ease;
+}
+
+.purchase-button {
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+}
+.purchase-button:hover {
+  transform: translateY(-3px);
+  filter: saturate(1.08);
+  box-shadow: 0 12px 24px color-mix(in oklab, var(--ink) 16%, transparent);
+}
+.purchase-button:active {
+  transform: translateY(1px) scale(.985);
+  box-shadow: 0 3px 8px color-mix(in oklab, var(--ink) 12%, transparent);
+}
+.purchase-button:focus-visible,
+.text-action:focus-visible,
+.activity-sample:focus-visible {
+  outline: 3px solid var(--sun);
+  outline-offset: 4px;
+}
+
+.activity-sample:hover,
+.learning-item:hover,
+.bonus-card:hover,
+.comparison-panel:hover,
+.testimonial-image:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 28px color-mix(in oklab, var(--ink) 12%, transparent);
+}
+.feature-image img:hover {
+  transform: scale(1.018);
+}
+.text-action:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 620px) {
+  .hero-product img { animation: none; }
+  .reveal-item { transform: translate3d(0, 14px, 0); }
+  .purchase-button:hover,
+  .activity-sample:hover,
+  .learning-item:hover,
+  .bonus-card:hover,
+  .comparison-panel:hover,
+  .testimonial-image:hover,
+  .feature-image img:hover { transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-content > *,
+  .hero-product img,
+  .reveal-item,
+  .purchase-button,
+  .text-action,
+  .activity-sample,
+  .learning-item,
+  .bonus-card,
+  .comparison-panel,
+  .testimonial-image,
+  .feature-image img {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    will-change: auto !important;
+  }
+}
