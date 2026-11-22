@@ -533,6 +533,15 @@ function SalesPage() {
 
       <section className="section-band section-band--plain">
         <div className="content-wrap world-overview">
+          <div className="world-overview-image">
+            <img
+              src={collectionPortrait.url}
+              alt="Livro de atividades Missão Volta ao Mundo com países, bandeiras e mapas"
+              width={460}
+              height={690}
+              loading="lazy"
+            />
+          </div>
           <div className="world-overview-copy">
             <SectionHeading
               eyebrow="Uma coleção completa"
@@ -560,16 +569,10 @@ function SalesPage() {
                 </li>
               ))}
             </ul>
+            <CheckoutLink className="purchase-button purchase-button--green world-overview-cta">
+              Quero conhecer a coleção completa <ArrowRight aria-hidden="true" size={18} />
+            </CheckoutLink>
             <p className="assurance-line">Compra segura • Acesso por e-mail • Garantia de {salesPageFacts.guaranteeDays} dias</p>
-          </div>
-          <div className="world-overview-image">
-            <img
-              src={collectionPortrait.url}
-              alt="Livros e materiais da coleção Missão Volta ao Mundo"
-              width={460}
-              height={690}
-              loading="lazy"
-            />
           </div>
         </div>
       </section>
