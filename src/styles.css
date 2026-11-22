@@ -1994,3 +1994,8 @@
     will-change: auto !important;
   }
 }
+
+
+#lovable-badge {
+  display: none !important;
+}
