@@ -412,8 +412,8 @@ function SalesPage() {
           </div>
           <div className="feature-image">
             <img
-              src={missionBrazil.url}
-              alt="Livro Missão pelo Brasil com atividades sobre estados, capitais e bandeiras"
+              src="/images/bonus-portugal-brasil-world.svg"
+              alt="Material educativo ilustrado sobre Portugal e Brasil, com mapas, bandeiras e atividades infantis"
               width={900}
               height={506}
               loading="lazy"
