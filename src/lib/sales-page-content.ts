@@ -1,5 +1,5 @@
 export const salesPageFacts = {
-  completePrice: "R$ 27,00",
+  completePrice: "€ 5,00",
   essentialPrice: "R$ 14,90",
   referencePrice: "R$ 96,00",
   campaignDeadline: "30/11",
