@@ -113,13 +113,13 @@ const activitySamples = [
 ];
 
 const bonusImages: Record<(typeof collectionBonuses)[number]["image"], string> = {
-  missionBrazil: missionBrazil.url,
+  missionPortugalBrasil: "/images/bonus-portugal-brasil-world.svg",
   flagsAlbum: flagsAlbumSample.url,
   canadaActivity: canadaActivity.url,
   memoryGame: flagMemoryGame.url,
-  zumbiCard: zumbiCard.url,
-  heritageGame: heritageWordSearch.url,
-  smallExplorer: smallExplorerBook.url,
+  worldFigures: "/images/bonus-personagens-mundo.svg",
+  worldHistoryGames: "/images/bonus-jogos-historia-mundo.svg",
+  worldExplorer: "/images/bonus-pequeno-explorador-mundo.svg",
   surprise: surpriseBonus.url,
 };
 
@@ -399,12 +399,12 @@ function SalesPage() {
           <div className="feature-copy">
             <p className="included-badge">INCLUSO ATÉ {salesPageFacts.campaignDeadline}</p>
             <SectionHeading
-              title="Depois de explorar o mundo, é hora de conhecer o Brasil!"
+              title="A aventura também passa por Portugal e Brasil!"
               align="left"
             />
             <p>
-              Com o <strong>Missão pelo Brasil: Estados, Capitais e Bandeiras</strong>, a criança
-              embarca em uma nova aventura educativa pelos 26 estados e o Distrito Federal.
+              Com o material especial sobre <strong>Portugal e Brasil</strong>, a criança descobre regiões, símbolos,
+              culturas e curiosidades destes dois países de língua portuguesa.
             </p>
             <CheckoutLink className="purchase-button purchase-button--green">
               Quero conhecer a coleção completa <ArrowRight aria-hidden="true" size={18} />
@@ -591,19 +591,19 @@ function SalesPage() {
           <div className="feature-copy">
             <p className="included-badge">INCLUÍDO NA COLEÇÃO COMPLETA</p>
             <SectionHeading
-              title="Depois de conhecer o mundo, a aventura continua pelo Brasil"
+              title="Depois de conhecer os países, a aventura continua pela história do mundo"
               align="left"
             />
             <p>
-              O Pequeno Explorador leva a criança a uma viagem educativa pela História do Brasil,
-              ampliando as descobertas da coleção.
+              O Pequeno Explorador leva a criança a uma viagem educativa pela história, cultura e património
+              de diferentes povos e civilizações, ampliando as descobertas da coleção.
             </p>
             <p className="page-count"><BookOpen aria-hidden="true" size={18} /> 80 páginas de conteúdo educativo</p>
           </div>
           <div className="feature-image feature-image--cover">
             <img
               src={smallExplorerBook.url}
-              alt="Livro Pequeno Explorador — uma viagem pela História do Brasil"
+              alt="Livro Pequeno Explorador — uma viagem ilustrada pela história do mundo"
               width={720}
               height={960}
               loading="lazy"
@@ -644,7 +644,7 @@ function SalesPage() {
             <div className="offer-story">
               <p className="offer-kicker"><Sparkles aria-hidden="true" size={15} /> Coleção completa • Melhor escolha</p>
               <SectionHeading
-                title="Leve uma aventura completa pelos 195 países do mundo e pela história do Brasil"
+                title="Leve uma aventura completa pelos 195 países e pela história do mundo"
                 align="left"
               />
               <ul className="offer-includes">
@@ -758,9 +758,9 @@ function SalesPage() {
       <section className="closing-section">
         <div className="content-wrap closing-content">
           <p className="closing-kicker"><Compass aria-hidden="true" size={16} /> Sua próxima aventura começa aqui</p>
-          <h2>Uma aventura pelo Brasil e pelo mundo está esperando pelo seu pequeno</h2>
+          <h2>Uma aventura pelo mundo está à espera do seu pequeno explorador</h2>
           <p>
-            São 195 países, História do Brasil, jogos, atividades e centenas de descobertas
+            São 195 países, história mundial, culturas, jogos, atividades e centenas de descobertas
             reunidas em uma única coleção.
           </p>
           <p className="closing-price">Coleção completa por <strong>{salesPageFacts.completePrice}</strong></p>
