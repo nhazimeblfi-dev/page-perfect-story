@@ -531,7 +531,7 @@ function SalesPage() {
         </div>
       </section>
 
-      <section className="section-band section-band--plain">
+      <section id="oferta" className="section-band section-band--plain collection-offer-section">
         <div className="content-wrap world-overview">
           <div className="world-overview-image">
             <img
