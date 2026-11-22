@@ -265,6 +265,10 @@ function SalesPage() {
           <p><span aria-hidden="true">✦</span> Condição especial de fim de ano — válida até {salesPageFacts.campaignDeadline} <span aria-hidden="true">✦</span></p>
           <p aria-hidden="true"><span>✦</span> Condição especial de fim de ano — válida até {salesPageFacts.campaignDeadline} <span>✦</span></p>
           <p aria-hidden="true"><span>✦</span> Condição especial de fim de ano — válida até {salesPageFacts.campaignDeadline} <span>✦</span></p>
+          <p aria-hidden="true"><span>✦</span> Condição especial de fim de ano — válida até {salesPageFacts.campaignDeadline} <span>✦</span></p>
+          <p aria-hidden="true"><span>✦</span> Condição especial de fim de ano — válida até {salesPageFacts.campaignDeadline} <span>✦</span></p>
+          <p aria-hidden="true"><span>✦</span> Condição especial de fim de ano — válida até {salesPageFacts.campaignDeadline} <span>✦</span></p>
+          <p aria-hidden="true"><span>✦</span> Condição especial de fim de ano — válida até {salesPageFacts.campaignDeadline} <span>✦</span></p>
         </div>
       </div>
 
