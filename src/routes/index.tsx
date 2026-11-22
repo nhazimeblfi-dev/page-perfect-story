@@ -196,7 +196,6 @@ export const Route = createFileRoute("/")({
 });
 
 function SalesPage() {
-  const [showAllTestimonials, setShowAllTestimonials] = useState(false);
   const [showAllActivities, setShowAllActivities] = useState(false);
   const [activeActivity, setActiveActivity] = useState<number | null>(null);
 
@@ -257,9 +256,6 @@ function SalesPage() {
     };
   }, [activeActivity]);
 
-  const visibleTestimonials = showAllTestimonials
-    ? testimonials
-    : testimonials.slice(0, 2);
   const visibleActivities = showAllActivities
     ? activitySamples
     : activitySamples.slice(0, 4);
@@ -362,7 +358,7 @@ function SalesPage() {
             <div className="rating-promise"><ShieldCheck aria-hidden="true" size={21} /> Compromisso com a entrega</div>
           </div>
           <div className="testimonial-grid">
-            {visibleTestimonials.map((testimonial) => (
+            {testimonials.map((testimonial) => (
               <figure className="testimonial-image" key={testimonial.src}>
                 <img src={testimonial.src} alt={testimonial.alt} loading="lazy" />
               </figure>
@@ -372,15 +368,6 @@ function SalesPage() {
             Atenção: todos os depoimentos desta página são de clientes reais que adquiriram o
             material diretamente com a MISSÃO VOLTA AO MUNDO.
           </p>
-          <button
-            className="text-action"
-            type="button"
-            aria-expanded={showAllTestimonials}
-            onClick={() => setShowAllTestimonials((current) => !current)}
-          >
-            {showAllTestimonials ? "Ver menos depoimentos" : "Ver mais depoimentos reais"}
-            <ArrowDown aria-hidden="true" size={16} />
-          </button>
         </div>
       </section>
 
