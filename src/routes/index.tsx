@@ -2,6 +2,7 @@ import { useEffect, useState, type ReactNode } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import {
   ArrowDown,
+  ArrowLeft,
   ArrowRight,
   BookOpen,
   Check,
@@ -15,6 +16,7 @@ import {
   MapPinned,
   ShieldCheck,
   Sparkles,
+  ZoomIn,
 } from "lucide-react";
 
 import afghanistanSample from "@/assets/afghanistan-sample.webp.asset.json";
@@ -30,7 +32,6 @@ import flagsAlbumSample from "@/assets/flags-album-sample.webp.asset.json";
 import heritageWordSearch from "@/assets/heritage-word-search.webp.asset.json";
 import missionBrazil from "@/assets/mission-brazil.webp.asset.json";
 import primaryCollectionCover from "@/assets/main-collection-cover.png.asset.json";
-import paranaSample from "@/assets/parana-sample.webp.asset.json";
 import smallExplorerBook from "@/assets/small-explorer-book.webp.asset.json";
 import surpriseBonus from "@/assets/surprise-bonus.webp.asset.json";
 import testimonialChris from "@/assets/testimonial-chris.webp.asset.json";
@@ -58,6 +59,49 @@ const testimonials = [
   {
     src: testimonialHeloisa.url,
     alt: "Depoimento sobre o material educativo para crianças",
+  },
+];
+
+const activitySamples = [
+  {
+    src: austriaSample.url,
+    alt: "Página do livro com Áustria, Azerbaijão, Bahamas e Bahrein",
+    label: "Bandeiras",
+  },
+  {
+    src: algeriaSample.url,
+    alt: "Página do livro com Argélia, Argentina, Armênia e Austrália",
+    label: "Bandeiras",
+  },
+  {
+    src: afghanistanSample.url,
+    alt: "Página do livro com Afeganistão, África do Sul, Albânia e Alemanha",
+    label: "Bandeiras",
+  },
+  {
+    src: canadaActivity.url,
+    alt: "Atividade sobre o Canadá com bandeira, mapa e curiosidades",
+    label: "Países",
+  },
+  {
+    src: countryPagesSpread.url,
+    alt: "Páginas internas do Livro Missão Volta ao Mundo com países e bandeiras",
+    label: "Países",
+  },
+  {
+    src: flagsAlbumSample.url,
+    alt: "Página do Álbum de Bandeiras do Mundo com bandeiras em ordem alfabética",
+    label: "Bandeiras",
+  },
+  {
+    src: brazilHistorySample.url,
+    alt: "Atividade infantil sobre o Brasil antes de 1500",
+    label: "Histórias",
+  },
+  {
+    src: heritageWordSearch.url,
+    alt: "Caça-palavras sobre heranças africanas na cultura brasileira",
+    label: "Jogos",
   },
 ];
 
@@ -147,6 +191,8 @@ export const Route = createFileRoute("/")({
 
 function SalesPage() {
   const [showAllTestimonials, setShowAllTestimonials] = useState(false);
+  const [showAllActivities, setShowAllActivities] = useState(false);
+  const [activeActivity, setActiveActivity] = useState<number | null>(null);
 
   useEffect(() => {
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -177,7 +223,40 @@ function SalesPage() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    if (activeActivity === null) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setActiveActivity(null);
+      if (event.key === "ArrowLeft") {
+        setActiveActivity((current) =>
+          current === null
+            ? 0
+            : (current - 1 + activitySamples.length) % activitySamples.length,
+        );
+      }
+      if (event.key === "ArrowRight") {
+        setActiveActivity((current) =>
+          current === null ? 0 : (current + 1) % activitySamples.length,
+        );
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [activeActivity]);
+
   const visibleTestimonials = showAllTestimonials ? testimonials : testimonials.slice(0, 2);
+  const visibleActivities = showAllActivities
+    ? activitySamples
+    : activitySamples.slice(0, 4);
+  const selectedActivity =
+    activeActivity === null ? undefined : activitySamples[activeActivity];
 
   return (
     <main className="sales-page">
@@ -350,6 +429,49 @@ function SalesPage() {
               height={507}
               loading="lazy"
             />
+          </div>
+        </div>
+      </section>
+
+      <section className="section-band section-band--plain">
+        <div className="content-wrap">
+          <SectionHeading
+            eyebrow="Por dentro da coleção"
+            title="Veja algumas das atividades que seu filho vai receber"
+            description="Páginas reais da coleção para transformar cada país em uma nova descoberta."
+          />
+          <div className="activity-gallery">
+            {visibleActivities.map((item, index) => (
+              <button
+                className="activity-sample"
+                key={item.src}
+                type="button"
+                aria-label={`${item.label}: ${item.alt}. Toque para ampliar`}
+                onClick={() => setActiveActivity(index)}
+              >
+                <img src={item.src} alt="" loading="lazy" />
+                <span className="activity-label">{item.label}</span>
+                <span className="activity-zoom"><ZoomIn aria-hidden="true" size={18} /></span>
+              </button>
+            ))}
+          </div>
+          <div className="gallery-controls">
+            <button
+              className="text-action"
+              type="button"
+              aria-expanded={showAllActivities}
+              onClick={() => setShowAllActivities((current) => !current)}
+            >
+              {showAllActivities ? "Ver menos" : "+ Ver mais"}
+              <ArrowDown aria-hidden="true" size={16} />
+            </button>
+            <p>Arraste para o lado e toque para ampliar</p>
+          </div>
+          <div className="gallery-purchase">
+            <p>Coleção completa por <strong>{salesPageFacts.completePrice}</strong></p>
+            <CheckoutLink className="purchase-button purchase-button--green">
+              Quero todas as atividades <ArrowRight aria-hidden="true" size={18} />
+            </CheckoutLink>
           </div>
         </div>
       </section>
@@ -638,6 +760,48 @@ function SalesPage() {
         </CheckoutLink>
       </div>
 
+      {selectedActivity ? (
+        <div className="lightbox" role="dialog" aria-modal="true" aria-label="Atividade ampliada">
+          <div className="lightbox-content">
+            <button
+              className="lightbox-close"
+              type="button"
+              aria-label="Fechar imagem ampliada"
+              onClick={() => setActiveActivity(null)}
+            >
+              ×
+            </button>
+            <button
+              className="lightbox-nav lightbox-nav--previous"
+              type="button"
+              aria-label="Imagem anterior"
+              onClick={() =>
+                setActiveActivity((current) =>
+                  current === null
+                    ? 0
+                    : (current - 1 + activitySamples.length) % activitySamples.length,
+                )
+              }
+            >
+              <ArrowLeft aria-hidden="true" size={21} />
+            </button>
+            <img src={selectedActivity.src} alt={selectedActivity.alt} />
+            <button
+              className="lightbox-nav lightbox-nav--next"
+              type="button"
+              aria-label="Próxima imagem"
+              onClick={() =>
+                setActiveActivity((current) =>
+                  current === null ? 0 : (current + 1) % activitySamples.length,
+                )
+              }
+            >
+              <ArrowRight aria-hidden="true" size={21} />
+            </button>
+            <p>{selectedActivity.alt}</p>
+          </div>
+        </div>
+      ) : null}
     </main>
   );
 }
