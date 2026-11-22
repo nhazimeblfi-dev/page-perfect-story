@@ -3,7 +3,7 @@ export const salesPageFacts = {
   referencePrice: "€ 59,00",
   campaignDeadline: "30/11",
   guaranteeDays: 7,
-  completeCheckoutUrl: "https://app.mivvo.com.br/checkout/01a1eec9-3889-7619-b7f1-e11fd69c89d9",
+  completeCheckoutUrl: "https://pay.hotmart.com/V108612539Q?off=afdxteh8&checkoutMode=10",
   quizCheckoutUrl: "https://app.mivvo.com.br/checkout/01a1eed4-6ae2-7613-b48c-ef85b6317512",
 } as const;
 
