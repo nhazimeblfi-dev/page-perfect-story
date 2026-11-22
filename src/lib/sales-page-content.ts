@@ -1,11 +1,9 @@
 export const salesPageFacts = {
   completePrice: "€ 5,00",
-  essentialPrice: "R$ 14,90",
   referencePrice: "R$ 96,00",
   campaignDeadline: "30/11",
   guaranteeDays: 7,
   completeCheckoutUrl: "https://app.mivvo.com.br/checkout/01a1eec9-3889-7619-b7f1-e11fd69c89d9",
-  essentialCheckoutUrl: "https://app.mivvo.com.br/checkout/01a1eece-e31a-703d-a001-5b2a8506bb36",
   quizCheckoutUrl: "https://app.mivvo.com.br/checkout/01a1eed4-6ae2-7613-b48c-ef85b6317512",
 } as const;
 
