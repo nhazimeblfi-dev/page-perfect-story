@@ -185,22 +185,42 @@
   display: flex;
   min-height: 38px;
   align-items: center;
-  justify-content: center;
-  gap: 12px;
-  padding: 8px 18px;
+  overflow: hidden;
+  padding: 8px 0;
   background: var(--grass);
   color: var(--primary-foreground);
-  text-align: center;
   font-size: 13px;
   font-weight: 900;
 }
 
-.promo-ribbon span {
+.promo-ribbon-track {
+  display: flex;
+  width: max-content;
+  flex: 0 0 auto;
+  animation: promo-ribbon-scroll 22s linear infinite;
+}
+
+.promo-ribbon-track p {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  padding-inline: 28px;
+  white-space: nowrap;
+}
+
+.promo-ribbon-track span {
   color: var(--sun);
 }
 
-.promo-ribbon p {
-  margin: 0;
+@keyframes promo-ribbon-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .promo-ribbon-track { animation: none; }
 }
 
 .hero-section {
