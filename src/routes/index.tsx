@@ -123,24 +123,15 @@ const bonusImages: Record<(typeof collectionBonuses)[number]["image"], string> =
   surprise: surpriseBonus.url,
 };
 
-type CheckoutPlan = "complete" | "essential";
-
 function CheckoutLink({
-  plan = "complete",
   className,
   children,
 }: {
-  plan?: CheckoutPlan;
   className: string;
   children: ReactNode;
 }) {
-  const href =
-    plan === "essential"
-      ? salesPageFacts.essentialCheckoutUrl
-      : salesPageFacts.completeCheckoutUrl;
-
   return (
-    <a className={className} href={href} rel="noopener noreferrer" target="_blank">
+    <a className={className} href={salesPageFacts.completeCheckoutUrl} rel="noopener noreferrer" target="_blank">
       {children}
     </a>
   );
@@ -677,22 +668,6 @@ function SalesPage() {
                 Você tem {salesPageFacts.guaranteeDays} dias para conhecer o material. Se entender que não é adequado
                 para sua família, poderá solicitar o reembolso dentro do prazo da garantia.
               </p>
-            </div>
-          </div>
-          <div className="essential-card">
-            <div>
-              <p className="essential-label">Alternativa mais leve</p>
-              <h3>Plano Essencial</h3>
-              <p>Inclui apenas o Livro Missão Volta ao Mundo por {salesPageFacts.essentialPrice}.</p>
-              <p className="essential-exclusion">
-                Não inclui os bônus, o Livro Pequeno Explorador e os materiais extras da coleção completa.
-              </p>
-            </div>
-            <div className="essential-action">
-              <CheckoutLink plan="essential" className="purchase-button purchase-button--outline">
-                Quero o Plano Essencial <ArrowRight aria-hidden="true" size={18} />
-              </CheckoutLink>
-              <span>Pagamento único</span>
             </div>
           </div>
         </div>
