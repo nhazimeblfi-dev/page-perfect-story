@@ -130,7 +130,7 @@ function CheckoutLink({
   children: ReactNode;
 }) {
   return (
-    <a className={className} href={salesPageFacts.completeCheckoutUrl} rel="noopener noreferrer" target="_blank">
+    <a className={className} href="#oferta">
       {children}
     </a>
   );
@@ -654,9 +654,9 @@ function SalesPage() {
               <p className="old-price">De {salesPageFacts.referencePrice} por apenas</p>
               <p className="current-price">{salesPageFacts.completePrice}</p>
               <p className="price-caption">Pagamento único • Sem mensalidade</p>
-              <CheckoutLink className="purchase-button purchase-button--green purchase-button--full">
+              <a className="purchase-button purchase-button--green purchase-button--full" href={salesPageFacts.completeCheckoutUrl} rel="noopener noreferrer" target="_blank">
                 Quero a coleção completa <ArrowRight aria-hidden="true" size={18} />
-              </CheckoutLink>
+              </a>
               <div className="offer-assurances">
                 <span><Check aria-hidden="true" size={15} /> Material digital</span>
                 <span><ShieldCheck aria-hidden="true" size={15} /> Garantia de {salesPageFacts.guaranteeDays} dias</span>
