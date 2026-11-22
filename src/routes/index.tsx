@@ -61,7 +61,7 @@ const testimonials = [
   },
 ];
 
- Record<(typeof collectionBonuses)[number]["image"], string> = {
+const bonusImages: Record<(typeof collectionBonuses)[number]["image"], string> = {
   missionPortugalBrasil: "/images/bonus-portugal-brasil-world.svg",
   flagsAlbum: flagsAlbumSample.url,
   canadaActivity: canadaActivity.url,
@@ -177,7 +177,7 @@ function SalesPage() {
     return () => observer.disconnect();
   }, []);
 
- = showAllTestimonials ? testimonials : testimonials.slice(0, 2);
+  const visibleTestimonials = showAllTestimonials ? testimonials : testimonials.slice(0, 2);
 
   return (
     <main className="sales-page">
@@ -354,7 +354,7 @@ function SalesPage() {
         </div>
       </section>
 
-
+      <section className="section-band section-band--sun">
         <div className="content-wrap">
           <SectionHeading
             title="Aprender sobre o mundo não precisa ser cansativo"
@@ -638,6 +638,6 @@ function SalesPage() {
         </CheckoutLink>
       </div>
 
-
+    </main>
   );
 }
