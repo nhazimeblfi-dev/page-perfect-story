@@ -124,7 +124,7 @@ function CheckoutLink({
   children: ReactNode;
 }) {
   return (
-    <a className={className} href="#botao-principal">
+    <a className={className} href="#oferta">
       {children}
     </a>
   );
