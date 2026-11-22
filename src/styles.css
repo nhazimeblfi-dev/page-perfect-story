@@ -1566,8 +1566,8 @@
   }
 
   .hero-product img {
-    aspect-ratio: 4 / 3;
-    object-fit: contain;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
   }
 
   .hero-stamp {

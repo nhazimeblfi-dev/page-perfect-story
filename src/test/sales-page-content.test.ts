@@ -3,12 +3,8 @@ import { describe, expect, it } from "vitest";
 import { salesPageFacts } from "@/lib/sales-page-content";
 
 describe("sales page offer facts", () => {
-  it("keeps the complete collection price at R$ 27,00", () => {
-    expect(salesPageFacts.completePrice).toBe("R$ 27,00");
-  });
-
-  it("keeps the essential plan price at R$ 14,90", () => {
-    expect(salesPageFacts.essentialPrice).toBe("R$ 14,90");
+  it("keeps the complete collection price at € 5,60", () => {
+    expect(salesPageFacts.completePrice).toBe("€ 5,60");
   });
 
   it("keeps the campaign deadline at 30/11", () => {

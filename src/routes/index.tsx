@@ -24,8 +24,6 @@ import algeriaSample from "@/assets/algeria-sample.webp.asset.json";
 import austriaSample from "@/assets/austria-sample.webp.asset.json";
 import brazilHistorySample from "@/assets/brazil-history-sample.webp.asset.json";
 import canadaActivity from "@/assets/canada-activity.webp.asset.json";
-import collectionComplete from "@/assets/collection-complete.webp.asset.json";
-import collectionHero from "@/assets/collection-hero.webp.asset.json";
 import collectionPortrait from "@/assets/collection-portrait.webp.asset.json";
 import collectionWide from "@/assets/collection-wide.webp.asset.json";
 import countryPagesSpread from "@/assets/country-pages-spread.webp.asset.json";
@@ -33,6 +31,7 @@ import flagMemoryGame from "@/assets/flag-memory-game.webp.asset.json";
 import flagsAlbumSample from "@/assets/flags-album-sample.webp.asset.json";
 import heritageWordSearch from "@/assets/heritage-word-search.webp.asset.json";
 import missionBrazil from "@/assets/mission-brazil.webp.asset.json";
+import primaryCollectionCover from "@/assets/main-collection-cover.png.asset.json";
 import paranaSample from "@/assets/parana-sample.webp.asset.json";
 import smallExplorerBook from "@/assets/small-explorer-book.webp.asset.json";
 import surpriseBonus from "@/assets/surprise-bonus.webp.asset.json";
@@ -292,10 +291,10 @@ function SalesPage() {
           </div>
           <figure className="hero-product">
             <img
-              src={collectionHero.url}
-              alt="Coleção Missão Volta ao Mundo: livros, jogos e atividades educativas"
-              width={1000}
-              height={563}
+              src={primaryCollectionCover.url}
+              alt="Coleção educativa com livros, bandeiras, atividades e quiz sobre o mundo"
+              width={1672}
+              height={941}
               fetchPriority="high"
               decoding="async"
             />
@@ -645,10 +644,10 @@ function SalesPage() {
               </ul>
               <img
                 className="offer-product-image"
-                src={collectionComplete.url}
-                alt="Coleção Missão Volta ao Mundo completa com livros, atividades e jogos"
-                width={560}
-                height={315}
+                src={primaryCollectionCover.url}
+                alt="Coleção completa com Bichos do Mundo, Bandeiras do Mundo, Pequeno Explorador, Missão pelo Portugal e Brasil e Quiz à Volta do Mundo"
+                width={1672}
+                height={941}
                 loading="lazy"
               />
             </div>
