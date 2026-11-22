@@ -896,6 +896,12 @@
   line-height: 1.55;
 }
 
+.collection-offer-section {
+  display: block;
+  visibility: visible;
+  scroll-margin-top: 90px;
+}
+
 .world-overview {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.72fr);
@@ -1514,6 +1520,7 @@
   }
 
   .feature-split,
+  .collection-offer-section .world-overview,
   .world-overview,
   .offer-grid {
     grid-template-columns: minmax(0, 1fr);
