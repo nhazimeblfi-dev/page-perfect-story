@@ -211,6 +211,35 @@ function SalesPage() {
   const [activeActivity, setActiveActivity] = useState<number | null>(null);
 
   useEffect(() => {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion || !("IntersectionObserver" in window)) return;
+
+    const revealTargets = document.querySelectorAll<HTMLElement>(
+      ".sales-page section .section-heading, .sales-page section .feature-copy, .sales-page section .feature-image, .sales-page section .rating-strip, .sales-page section .testimonial-image, .sales-page section .activity-sample, .sales-page section .comparison-panel, .sales-page section .learning-item, .sales-page section .bonus-card, .sales-page section .offer-card, .sales-page section .security-item, .sales-page section .faq-item, .sales-page section .world-overview-copy, .sales-page section .world-overview-image",
+    );
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -36px 0px" },
+    );
+
+    revealTargets.forEach((element, index) => {
+      element.classList.add("reveal-item");
+      element.style.setProperty("--reveal-delay", `${Math.min(index % 4, 3) * 65}ms`);
+      observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
     if (activeActivity === null) return;
 
     const previousOverflow = document.body.style.overflow;
