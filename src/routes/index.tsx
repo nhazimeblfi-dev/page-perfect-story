@@ -24,13 +24,13 @@ import algeriaSample from "@/assets/algeria-sample.webp.asset.json";
 import austriaSample from "@/assets/austria-sample.webp.asset.json";
 import brazilHistorySample from "@/assets/brazil-history-sample.webp.asset.json";
 import canadaActivity from "@/assets/canada-activity.webp.asset.json";
-import collectionPortrait from "@/assets/collection-portrait.webp.asset.json";
 import collectionWide from "@/assets/collection-wide.webp.asset.json";
 import countryPagesSpread from "@/assets/country-pages-spread.webp.asset.json";
 import flagMemoryGame from "@/assets/flag-memory-game.webp.asset.json";
 import flagsAlbumSample from "@/assets/flags-album-sample.webp.asset.json";
 import heritageWordSearch from "@/assets/heritage-word-search.webp.asset.json";
 import missionBrazil from "@/assets/mission-brazil.webp.asset.json";
+import offerCollectionPortrait from "@/assets/offer-collection-portrait.png.asset.json";
 import primaryCollectionCover from "@/assets/main-collection-cover.png.asset.json";
 import smallExplorerBook from "@/assets/small-explorer-book.webp.asset.json";
 import surpriseBonus from "@/assets/surprise-bonus.webp.asset.json";
@@ -580,10 +580,10 @@ function SalesPage() {
         <div className="content-wrap world-overview">
           <div className="world-overview-image">
             <img
-              src={collectionPortrait.url}
-              alt="Livro de atividades Missão Volta ao Mundo com países, bandeiras e mapas"
-              width={460}
-              height={690}
+              src={offerCollectionPortrait.url}
+              alt="Coleção Missão Volta ao Mundo com livros, atividades e quiz de geografia para crianças"
+              width={1166}
+              height={1349}
               loading="lazy"
             />
           </div>
