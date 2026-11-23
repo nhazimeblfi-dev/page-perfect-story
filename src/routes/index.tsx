@@ -37,6 +37,15 @@ import surpriseBonus from "@/assets/surprise-bonus.webp.asset.json";
 import testimonialChris from "@/assets/testimonial-chris.webp.asset.json";
 import testimonialHeloisa from "@/assets/testimonial-heloisa.webp.asset.json";
 import testimonialLaura from "@/assets/testimonial-laura.webp.asset.json";
+import testimonialUpload01 from "@/assets/testimonial-upload-01.png.asset.json";
+import testimonialUpload02 from "@/assets/testimonial-upload-02.png.asset.json";
+import testimonialUpload03 from "@/assets/testimonial-upload-03.png.asset.json";
+import testimonialUpload04 from "@/assets/testimonial-upload-04.png.asset.json";
+import testimonialUpload05 from "@/assets/testimonial-upload-05.png.asset.json";
+import testimonialUpload07 from "@/assets/testimonial-upload-07.png.asset.json";
+import testimonialUpload08 from "@/assets/testimonial-upload-08.png.asset.json";
+import testimonialUpload09 from "@/assets/testimonial-upload-09.png.asset.json";
+import testimonialUpload10 from "@/assets/testimonial-upload-10.png.asset.json";
 import worldFlagsBookDetail from "@/assets/world-flags-book-detail.webp.asset.json";
 import worldQuiz from "@/assets/world-quiz.webp.asset.json";
 import zumbiCard from "@/assets/zumbi-card.webp.asset.json";
@@ -59,6 +68,42 @@ const testimonials = [
   {
     src: testimonialHeloisa.url,
     alt: "Depoimento sobre o material educativo para crianças",
+  },
+  {
+    src: testimonialUpload01.url,
+    alt: "Mensagem de cliente agradecendo pelo material e pelo atendimento recebido",
+  },
+  {
+    src: testimonialUpload02.url,
+    alt: "Depoimento de cliente elogiando as atividades e o interesse da criança",
+  },
+  {
+    src: testimonialUpload03.url,
+    alt: "Comentário de cliente sobre a coleção e as páginas de atividades",
+  },
+  {
+    src: testimonialUpload04.url,
+    alt: "Comentário de cliente no Facebook sobre o material educativo",
+  },
+  {
+    src: testimonialUpload05.url,
+    alt: "Comentário de cliente sobre as atividades do livro",
+  },
+  {
+    src: testimonialUpload07.url,
+    alt: "Comentário de cliente sobre o aprendizado das bandeiras",
+  },
+  {
+    src: testimonialUpload08.url,
+    alt: "Depoimento de cliente sobre a criança aprendendo as bandeiras",
+  },
+  {
+    src: testimonialUpload09.url,
+    alt: "Mensagem de professora infantil sobre a coleção",
+  },
+  {
+    src: testimonialUpload10.url,
+    alt: "Comentário de cliente recomendando o material",
   },
 ];
 
@@ -376,7 +421,7 @@ function SalesPage() {
             aria-expanded={showAllTestimonials}
             onClick={() => setShowAllTestimonials((current) => !current)}
           >
-            {showAllTestimonials ? "Ver menos depoimentos" : "Ver mais depoimentos reais"}
+            {showAllTestimonials ? "Ver menos depoimentos" : "Ver outros depoimentos"}
             <ArrowDown aria-hidden="true" size={16} />
           </button>
         </div>
