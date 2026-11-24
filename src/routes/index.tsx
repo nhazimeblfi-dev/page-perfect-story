@@ -31,7 +31,7 @@ import flagsAlbumSample from "@/assets/flags-album-sample.webp.asset.json";
 import heritageWordSearch from "@/assets/heritage-word-search.webp.asset.json";
 import missionBrazil from "@/assets/mission-brazil.webp.asset.json";
 import offerCollectionPortrait from "@/assets/offer-collection-portrait.png.asset.json";
-import primaryCollectionCover from "@/assets/main-collection-cover.png.asset.json";
+import primaryCollectionCover from "@/assets/main-collection-cover-revised.png.asset.json";
 import smallExplorerBook from "@/assets/small-explorer-book.webp.asset.json";
 import surpriseBonus from "@/assets/surprise-bonus.webp.asset.json";
 import testimonialChris from "@/assets/testimonial-chris.webp.asset.json";
